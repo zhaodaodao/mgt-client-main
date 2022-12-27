@@ -63,6 +63,12 @@ const routes = [
                 meta: { title: "地形(DEM)", name: "ProjectEditTerrain" },
                 component: () => import("@views/project/terrain-mgt/TerrainList.vue"),
               },
+              {
+                path: "/project/edit/auth",
+                name: "ProjectEditAuth",
+                meta: { title: "权限控制", name: "ProjectEditAuth" },
+                component: () => import("@views/project/auth-mgt/UserProjectList.vue"),
+              },
             ],
           },
         ],

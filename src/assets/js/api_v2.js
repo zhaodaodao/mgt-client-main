@@ -8,6 +8,7 @@ if (process.env.NODE_ENV == "production") {
   CLIENT_NAME = "/mgt-client"
   axios.defaults.baseURL = "/mgt-server";
 }
+
 const OSGB_DATA_API = "/api/v2/osgb";
 const KML_DATA_API = "/api/v2/kml";
 const ARTIFICIAL_DATA_API = "/api/v2/artificial";
@@ -18,6 +19,7 @@ const CESIUM_WORK_DATA_API = "/api/v2/cesium";
 const USER_API = "/api/v2/user";
 const VERIFY_API = "/api/v2/verify";
 const DEPARTMENT_API = "/api/v2/department";
+const USER_PROJECT_API = "/api/v2/user_project"
 
 /**
  * osgb模型对应增删改查操作
@@ -253,4 +255,16 @@ export const addDepartment = (data) => {
 
 export const updateDepartment = (data) => {
   return axios.post(`${DEPARTMENT_API}/update`, qs.parse(data));
+};
+
+
+/**
+ * 对权限进行管理
+ */
+export const listUserInfo = (query) => {
+  return axios.post(`${USER_PROJECT_API}/list`, qs.parse(query));
+};
+
+export const updateUserProjectInfo = (data) => {
+  return axios.post(`${USER_PROJECT_API}/update`, qs.parse(data));
 };
